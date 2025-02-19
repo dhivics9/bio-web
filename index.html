@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Dhivi's Portofolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-image: linear-gradient(to bottom, #ffffff, #d8d8d8 99%);
+    background-attachment: fixed;
+}
+
+header{
+    /* margin-top: 20px; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 9%;
+    background-color: #7272721e;
+    filter: drop-shadow(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo{
+    font-size: 3rem;
+    color: #2eabff;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover{
+    transform: scale(1.1);
+}
+
+nav a{
+    font-size: 1.8rem;
+    color: rgb(173, 173, 173);
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a.active{
+    color: #2eabff;
+    border-bottom: 3px solid #2eabff;
+}
+
+@media(max-width:995px){
+    nav{
+        position: absolute;
+        display: none;
+        top: 0;
+        right: 0;
+        width: 40%;
+        border-left: 3px solid #2eabff;
+        border-bottom: 3px solid #2eabff;
+        border-bottom-left-radius: 2rem;
+        padding: 1rem solid;
+        background-color: #ffffff;
+        border-top: 0.1rem solid rgb(255, 255, 255);
+    }
+
+    nav.active{
+        display: block;
+    }
+
+    nav a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    nav a:hover,
+    nav a.active{
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid #2eabff;
+    }
+}
+
+section{
+    min-height: 100vh;
+    padding: 5rem 9% 5rem;
+}
+
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+  height: 100vh;
+  width: 100vw;
+}
+
+.home .home-content h1{
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #ffffff;
+    text-shadow:
+       3px 3px 0 #555555,
+     -1px -1px 0 #555555,  
+      1px -1px 0 #555555,
+      -1px 1px 0 #555555,
+       1px 1px 0 #555555;
+}
+
+span{
+    color: #2eabff;
+}
+
+.home-content h3{
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow:
+       3px 3px 0 #555555,
+     -1px -1px 0 #555555,  
+      1px -1px 0 #555555,
+      -1px 1px 0 #555555,
+       1px 1px 0 #555555;
+}
+
+.home-content p{
+    font-size: 1.6rem;
+    color: #2eabff;
+    text-shadow:
+       1px 1px 0 #e0e0e0,
+     -1px -1px 0 #e0e0e0,  
+      1px -1px 0 #e0e0e0,
+      -1px 1px 0 #e0e0e0,
+       1px 1px 0 #e0e0e0;
+}
+
+.home-img{
+    border-radius: 50%;
+}
+
+.home-img img{
+    position: relative;
+    width: 32vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px solid #2eabff;
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+.home-img img:hover{
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.social-icons a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: transparent;
+    border: 0.2rem solid #e7e7e7;
+    font-size: 2rem;
+    border-radius: 50%;
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease;
+    color: #2eabff;
+}
+
+.social-icons a:hover{
+    color: rgb(255, 255, 255);
+    transform: scale(1.3) translateY(-5px);
+    background-color: #2eabff;
+    box-shadow: 0  0 25px #2eabff;
+}
+
+.btn{
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background-color: rgb(255, 255, 255);
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: #2eabff;
+    letter-spacing: 0.3rem;
+    font-weight: 600;
+    border: 2px solid #2eabff;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover{
+    transform: scale3d(1.03);
+    background-color: #2eabff;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 0 25px #2eabff;
+}
+
+.typing-text{
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.typing-text span{
+    position: relative;
+}
+
+.typing-text span::before{
+    content: "software Developer";
+    color: #2eabff;
+    animation: words 20s infinite;
+}
+
+.typing-text span::after{
+    content: "";
+    background-color: rgba(0, 0, 0, 0);
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid black;
+    right: -8;
+    animation: cursor 0.6s infinite;
+}
+
+@keyframes cursor{
+    to{
+        border-left: 3px solid #2eabff;
+    }
+}
+
+@keyframes words{
+    0%, 20%{
+        content: "Web Developer";
+    }
+    21%, 40%{
+        content: "Developer";
+    }
+    41%, 60%{
+        content: "Student";
+    }
+}
+
+@media (max-width: 1000px){
+    .home{
+        gap: 4rem;
+    }
+}
+
+@media(max-width:995px){
+    .home{
+        flex-direction: column;
+        margin: 5rem 4rem;
+    }
+
+    .home .home-content h3{
+        font-size: 2.5rem;
+    }
+
+    .home-content h1{
+        font-size: 5rem;
+    }
+
+    .home-img img{
+        width: 70vw;
+        margin-top: 4rem;
+    }
+}
+
+.biodata {
+    margin-top: 10rem;
+    display: inline-block;
+    width: calc(50% - 10rem);
+    height: calc(100% - 10rem);
+    margin: 2rem;
+    padding: 40px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.biodata img {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 40%;
+    margin: 2rem;
+}
+
+.biodata h {
+    font-size: 2.5rem;
+    color: #ffffff;
+    text-shadow:
+       3px 3px 0 #555555,
+     -1px -1px 0 #555555,  
+      1px -1px 0 #555555,
+      -1px 1px 0 #555555,
+       1px 1px 0 #555555;
+}
+
+.biodata p {
+    font-size: 1.2rem;
+    color: #2eabff;
+    text-shadow:
+       1px 1px 0 #e0e0e0,
+     -1px -1px 0 #e0e0e0,  
+      1px -1px 0 #e0e0e0,
+      -1px 1px 0 #e0e0e0,
+       1px 1px 0 #e0e0e0;
+}
+
+.biodata table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.biodata th, .education td {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    text-align: left;
+}
+
+.biodata th {
+    background-color: #2eabff;
+    color: #fff;
+}
+
+.biodata td {
+    background-color: #f9f9f9;
+}
+
+.biodata tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+@media (max-width: 995px) {
+    .biodata{
+        width: 100%;
+        margin: 2rem 0;
+    }
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .card img {
+    max-width: 10%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  .card h1,h2,h3 {
+    margin-top: 0;
+    color: #ffffff;
+    text-shadow:
+       3px 3px 0 #555555,
+     -1px -1px 0 #555555,  
+      1px -1px 0 #555555,
+      -1px 1px 0 #555555,
+       1px 1px 0 #555555;
+  }
+
+  .card p {
+    margin-bottom: 0;
+    padding: 10px;
+  }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Dips</a>
+
+        <nav>
+            <a href="index.html " class="active"> Home</a>
+            <a href="porto.html" >About</a>
+        </nav>
+    </header>
+    <section class="home">
+        <div class="home-img">
+            <img src="main.jpg" alt="">
+        </div>
+        <div class="home-content">
+            <h1>Hi, My name is <span>Dhivi</span></h1>
+            <h3 class="typing-text">I'm a <span></span></h3>
+            <p>I am an Information Systems undergraduate at Telkom University with a strong passion for technology, analytics, and software development. I have experience in backend development, enterprise architecture, and data mining, and I enjoy solving complex problems through innovative digital solutions. I am eager to apply my skills in real-world projects and continuously learn new technologies to enhance my expertise.</p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/dhivi-cagardimika-sumardiyono-025a94260/"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/dhivics9/"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.instagram.com/cagardimikas/"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <a href="#" class="btn">Contact Me</a>
+        </div>
+    </section>
+</body>
+</html>
